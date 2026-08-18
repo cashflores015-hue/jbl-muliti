@@ -1,0 +1,115 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JBL_Muliti.MainPage"
+             BackgroundColor="#101010">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24,55,24,30" Spacing="22">
+
+            <Label Text="JBL MULITI"
+                   TextColor="#FF5A00"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Border BackgroundColor="#1D1D1D"
+                    Padding="22"
+                    Stroke="#333333"
+                    StrokeShape="RoundRectangle 22">
+
+                <VerticalStackLayout Spacing="16">
+
+                    <Label x:Name="StatusLabel"
+                           Text="NO SPEAKER CONNECTED"
+                           TextColor="#AAAAAA"
+                           FontSize="12"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center" />
+
+                    <Label x:Name="SpeakerNameLabel"
+                           Text="Find a Bluetooth speaker"
+                           TextColor="White"
+                           FontSize="27"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center" />
+
+                    <Label x:Name="BatteryLabel"
+                           Text="Bluetooth is ready"
+                           TextColor="#AAAAAA"
+                           FontSize="16"
+                           HorizontalOptions="Center" />
+
+                    <Button x:Name="FindSpeakerButton"
+                            Text="FIND SPEAKER"
+                            Clicked="OnFindSpeakerClicked"
+                            BackgroundColor="#FF5A00"
+                            TextColor="White"
+                            CornerRadius="18"
+                            HeightRequest="52" />
+
+                    <VerticalStackLayout x:Name="ControlsLayout"
+                                         Spacing="16">
+
+                        <Slider x:Name="VolumeSlider"
+                                Minimum="0"
+                                Maximum="100"
+                                Value="65"
+                                ThumbColor="#FF5A00"
+                                MinimumTrackColor="#FF5A00"
+                                MaximumTrackColor="#555555" />
+
+                        <Label x:Name="VolumeLabel"
+                               Text="Volume: 65%"
+                               TextColor="White"
+                               FontSize="16"
+                               HorizontalOptions="Center" />
+
+                        <Button x:Name="PlayButton"
+                                Text="▶ PLAY"
+                                Clicked="OnPlayClicked"
+                                BackgroundColor="#FF5A00"
+                                TextColor="White"
+                                CornerRadius="18"
+                                HeightRequest="52" />
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <Label Text="EQUALIZER"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   FontSize="18" />
+
+            <Grid x:Name="EqualizerGrid"
+                  ColumnDefinitions="*,*"
+                  RowDefinitions="Auto,Auto"
+                  ColumnSpacing="12"
+                  RowSpacing="12">
+
+                <Button Text="Bass Boost" Clicked="OnPresetClicked"
+                        Grid.Row="0" Grid.Column="0"
+                        BackgroundColor="#292929" TextColor="White" />
+                <Button Text="Balanced" Clicked="OnPresetClicked"
+                        Grid.Row="0" Grid.Column="1"
+                        BackgroundColor="#292929" TextColor="White" />
+                <Button Text="Vocal" Clicked="OnPresetClicked"
+                        Grid.Row="1" Grid.Column="0"
+                        BackgroundColor="#292929" TextColor="White" />
+                <Button Text="Party Mode" Clicked="OnPresetClicked"
+                        Grid.Row="1" Grid.Column="1"
+                        BackgroundColor="#292929" TextColor="White" />
+            </Grid>
+
+            <Button x:Name="AddSpeakerButton"
+                    Text="+ click on this to search for another speaker"
+                    Clicked="OnAddSpeakerClicked"
+                    BackgroundColor="#292929"
+                    TextColor="#FF5A00"
+                    BorderColor="#FF5A00"
+                    BorderWidth="1"
+                    CornerRadius="18"
+                    HeightRequest="52" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
